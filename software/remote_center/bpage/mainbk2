@@ -1,0 +1,19 @@
+#include <Wire.h>
+#include <Arduino.h>
+void setup() {
+  Wire.begin();
+  Serial.begin(115200);
+  Serial.printf("I2C found:---1--");
+}
+void loop() {
+  Serial.printf("I2C found:--2---");
+  byte err, addr;
+  Serial.printf("I2C found:---3--");
+  for (addr=1; addr<127; addr++) {
+    Serial.printf("I2C found:---4--");
+    Wire.beginTransmission(addr);
+    err=Wire.endTransmission();
+    if (err==0) Serial.printf("I2C found: 0x%02X\n", addr);
+  }
+  delay(1000);
+}
