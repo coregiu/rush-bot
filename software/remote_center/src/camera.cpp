@@ -1,6 +1,6 @@
 #include "camera.h"
 
-void init() {
+void initCamera() {
   delay(1000);
   Serial.println("\nGOOUUU V1.3 ESP32-S3 CAM 初始化...");
 
